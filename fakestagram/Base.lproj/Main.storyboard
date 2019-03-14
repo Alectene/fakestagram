@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="fakestagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="fakestagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,6 +147,11 @@
                         <viewLayoutGuide key="safeArea" id="sn5-k8-hsk"/>
                     </view>
                     <navigationItem key="navigationItem" id="d2T-J9-Tx8">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="v7E-CC-ZLo">
+                            <connections>
+                                <action selector="onLogoutButton:" destination="KHx-w6-wyX" id="nMG-cF-9mc"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" image="insta_camera_btn" id="0Ng-Lr-2XX">
                             <connections>
                                 <segue destination="euy-5Z-bFb" kind="presentation" id="pH4-HX-rvk"/>
