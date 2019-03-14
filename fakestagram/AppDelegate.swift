@@ -21,7 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.applicationId = "fakestagram"
                 configuration.server = "https://fathomless-atoll-67099.herokuapp.com/parse"
             })
-        )
+       )
+        if PFUser.current() != nil{
+            let main = UIStoryboard(name: "Main", bundle: nil)
+                let feedNavigationController = main.instantiateViewController(withIdentifier: "FeedNavigationController")
+            
+            window?.rootViewController = feedNavigationController
+        }
+        
         return true
     }
 
