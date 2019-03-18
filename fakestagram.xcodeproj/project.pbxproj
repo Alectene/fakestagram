@@ -10,6 +10,7 @@
 		236D2639B060403EA161F774 /* Pods_fakestagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271CDFE20635D4B33429F05D /* Pods_fakestagramUITests.framework */; };
 		73F78FAFA8FBB8CFBDD61878 /* Pods_fakestagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1A1B91E8F47D5C784325416 /* Pods_fakestagramTests.framework */; };
 		BB03DFCF2237419700C26587 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB03DFCE2237419700C26587 /* PostCell.swift */; };
+		BB1CA96F2240181F0062BCF8 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1CA96E2240181F0062BCF8 /* CommentCell.swift */; };
 		BBAC23C0222F2F38002AE202 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC23BF222F2F38002AE202 /* LoginViewController.swift */; };
 		BBAC23C2222F2F67002AE202 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAC23C1222F2F67002AE202 /* FeedViewController.swift */; };
 		BBD5315C222E203D00BCCA6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD5315B222E203D00BCCA6F /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		4AF23C8E030FCC569B9D0C3F /* Pods-fakestagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakestagramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fakestagramTests/Pods-fakestagramTests.release.xcconfig"; sourceTree = "<group>"; };
 		7B871B65CA2D7692FFD14C5D /* Pods-fakestagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fakestagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fakestagram/Pods-fakestagram.debug.xcconfig"; sourceTree = "<group>"; };
 		BB03DFCE2237419700C26587 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		BB1CA96E2240181F0062BCF8 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		BBAC23BF222F2F38002AE202 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BBAC23C1222F2F67002AE202 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		BBD53158222E203D00BCCA6F /* fakestagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fakestagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +154,7 @@
 				BBD53167222E203F00BCCA6F /* Info.plist */,
 				BBAC23BF222F2F38002AE202 /* LoginViewController.swift */,
 				BBAC23C1222F2F67002AE202 /* FeedViewController.swift */,
+				BB1CA96E2240181F0062BCF8 /* CommentCell.swift */,
 			);
 			path = fakestagram;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -370,6 +374,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +416,7 @@
 				BBAC23C2222F2F67002AE202 /* FeedViewController.swift in Sources */,
 				BBD5315C222E203D00BCCA6F /* AppDelegate.swift in Sources */,
 				BB03DFCF2237419700C26587 /* PostCell.swift in Sources */,
+				BB1CA96F2240181F0062BCF8 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
