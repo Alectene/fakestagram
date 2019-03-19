@@ -11,7 +11,7 @@ The following **required** functionality is completed:
 - [x] User stays logged in across restarts. (1pt)
 - [x] User can log out. (1pt)
 - [x] User can view comments on a post. (3pts)
-- [ ] User can add a new comment. (5pts) (App crashes after clicking on a commenr, still trying to figure out how to fix it)
+- [ ] User can add a new comment. (5pts) (App crashes after clicking on a comment, still trying to figure out how to fix it)
 
 The following **bonus** features are implemented:
 
@@ -22,7 +22,7 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/R9ebK2oxAg.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 # Parstagram - Part I
 
 This is an Instagram clone with a custom Parse backend that allows a user to post photos and view a global photos feed.
