@@ -17,8 +17,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     let commentBar = MessageInputBar()
+    
     var showsCommentBar = false
+    //var posts = String
     var posts = [PFObject]()
+    //var selectedPost: String()
+    var selectedPost: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,8 +70,27 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         //create comment
+       
+        let comment = PFObject(className: "Comments")
         
+        comment["text"] = text
+        comment["post"] = String()
+        //comment["author"] = String.self
+        comment["author"] = PFUser.current()
+        selectedPost.add(comment, forKey: "comments")
+        selectedPost.saveInBackground{(success, error) in
+            if success{
+                print("comment saved!")
+                
+            }else{
+                 print("Error12: \(String(describing: error))")
+                
+            }
+            
+            
+        }
         
+        tableView.reloadData()
         //clear and dismiss bar
         commentBar.inputTextView.text = nil
         showsCommentBar = false
@@ -129,16 +152,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        // let post = posts[indexPath.row]
         let post = posts[indexPath.section]
-        let comment = PFObject(className: "Comments")
+        //let comment = PFObject(className: "Comments")
         let comments = (post["comments"] as? [PFObject]) ?? []
         //let comment = comments[indexPath.row]
         if indexPath.row == comments.count + 1{
             showsCommentBar = true
             becomeFirstResponder()
             commentBar.inputTextView.becomeFirstResponder()
+            selectedPost = post
         }
-        
-       /* comment["text"] = "random comment"
+        /*
+        comment["text"] = "random comment1"
         comment["post"] = "post"
         comment["author"] = PFUser.current()
         post.add(comment, forKey: "comments")
@@ -151,7 +175,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
         }
-        */
+        
+     */
+            
+        }
     }
     
     /*
@@ -164,7 +191,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
      */
     
     //user can logout with this function
-    @IBAction func onLogoutButton(_ sender: Any) {
+func onLogoutButton(_ sender: Any) {
         PFUser.logOut()
         
         let main = UIStoryboard(name: "Main", bundle: nil)
@@ -177,4 +204,4 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-}
+
