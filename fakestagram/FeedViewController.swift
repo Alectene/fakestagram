@@ -31,6 +31,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     @IBOutlet weak var tableView: UITableView!
+     var refreshControl: UIRefreshControl!
     let commentBar = MessageInputBar()
     
     var showsCommentBar = false
@@ -51,6 +52,33 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardWillbeHidden(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        
+        
+    }
+    
+    // Implement the delay method
+    func run(after wait: TimeInterval, closure: @escaping () -> Void) {
+        let queue = DispatchQueue.main
+        queue.asyncAfter(deadline: DispatchTime.now() + wait, execute: closure)
+    }
+    
+    // Call the delay method in your onRefresh() method
+    func refresh() {
+        run(after: 2) {
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
+    //function to refresh
+    @objc func onRefresh(){
+        run(after: 2) {
+            self.refreshControl.endRefreshing()
+        }
+        
     }
     
     @objc func keyboardWillbeHidden(note: Notification){
@@ -79,10 +107,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             if posts != nil{
                 self.posts = posts!
                 self.tableView.reloadData()
+                
             }
         }
     }
     
+   
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         //create comment
        
@@ -122,6 +152,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func numberOfSections(in tableView: UITableView) -> Int {
         return posts.count
     }
+    
+    
+    
     
     
     
